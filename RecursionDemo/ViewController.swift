@@ -15,6 +15,15 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func performOperations(_ sender: UIButton) {
+        recurse(7)
+    }
+    
+    func recurse(_ n: Int) {
+        guard n > 0 else { return }
+        print("hi")
+        
+        recurse(n - 1) //recursive call
+    }
 }
 
