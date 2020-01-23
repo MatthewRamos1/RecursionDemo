@@ -17,6 +17,8 @@ class ViewController: UIViewController {
 
     @IBAction func performOperations(_ sender: UIButton) {
         recurse(7)
+        countDownToZero(from: 20)
+        print(factorial(4))
     }
     
     func recurse(_ n: Int) {
@@ -24,6 +26,18 @@ class ViewController: UIViewController {
         print("hi")
         
         recurse(n - 1) //recursive call
+    }
+    
+    func countDownToZero(from num: Int) {
+        guard num >= 0 else { return }
+        print(num)
+        countDownToZero(from: num - 1)
+    }
+    
+    func factorial(_ n: Int) -> Int{
+        guard  n > 1 else { return 1 }
+            return n * factorial(n - 1)
+        
     }
 }
 
